@@ -1,0 +1,112 @@
+{
+  "id": "juego4_umbral",
+  "title": "Encontrá el Umbral",
+  "subtitle": "Practicá cuándo frenar y darle espacio a tu compañero antes de que se tense.",
+  "ending": {
+    "title": "¡Terminaste los tres bloques!",
+    "message": "Reconocer a tiempo cuándo tu perro empieza a tensarse y darle espacio es una de las cosas más lindas que podés hacer por él en un paseo. Recordá que cada perro, y cada día, tiene su propia distancia: mirá siempre sus señales."
+  },
+  "blocks": [
+    {
+      "blockId": 1,
+      "blockTitle": "Bloque I: Distancia con estímulos tranquilos",
+      "lunoSummary": "Cuando tu perro todavía está relajado, frenar o ganar espacio ayuda a que no acumule tensión. Cada perro tiene su propia distancia, y puede cambiar de un día a otro."
+    },
+    {
+      "blockId": 2,
+      "blockTitle": "Bloque II: Cosas que se mueven rápido",
+      "lunoSummary": "Lo que se mueve rápido (runners, bicicletas) deja menos tiempo para reaccionar. Anticiparte y frenar con metros de ventaja ayuda a mantener la calma."
+    },
+    {
+      "blockId": 3,
+      "blockTitle": "Bloque III: Encuentros de frente",
+      "lunoSummary": "En los encuentros de frente con otros perros conviene dejar más espacio. Dar distancia no es huir: es cuidar a tu compañero y acompañarlo."
+    }
+  ],
+  "steps": [
+    {
+      "id": "umbral_01",
+      "block": 1,
+      "tag": "Bloque I · Caso 01",
+      "prompt": "Un peatón camina despacio y se acerca por la vereda. Mirá cómo cambia la postura de tu perro a medida que baja la distancia. Frená en el margen seguro.",
+      "media": "/images/games/juego4/caso1.webp",
+      "alt": "Peatón acercándose despacio por la vereda",
+      "initialDistance": 20,
+      "targetDistance": 12,
+      "tolerance": 2.5,
+      "feedback": {
+        "why": "En este caso, a los 12 metros aproximadamente tu perro mira al peatón con curiosidad tranquila, sin fijar la mirada ni tensar el lomo. Frenar o desviarte en esta zona ayuda a que el cruce sea fluido."
+      }
+    },
+    {
+      "id": "umbral_02",
+      "block": 1,
+      "tag": "Bloque I · Caso 02",
+      "prompt": "Un perro pequeño camina con su tutor a lo lejos, muy tranquilo. Encontrá la distancia justa para que tu perro se mantenga en calma.",
+      "media": "/images/games/juego4/caso2.webp",
+      "alt": "Perro pequeño caminando a lo lejos",
+      "initialDistance": 20,
+      "targetDistance": 8,
+      "tolerance": 2.0,
+      "feedback": {
+        "why": "Frente a un perro tranquilo, en este caso alcanzan unos 8 metros aproximadamente: tu perro puede mirar y entender lo que pasa sin ponerse rígido."
+      }
+    },
+    {
+      "id": "umbral_03",
+      "block": 2,
+      "tag": "Bloque II · Caso 03",
+      "prompt": "Un runner viene corriendo a ritmo parejo hacia ustedes. Al ir rápido, hay menos tiempo para reaccionar: frená antes de que la situación se acelere.",
+      "media": "/images/games/juego4/caso3.webp",
+      "alt": "Runner acercándose por la vereda",
+      "initialDistance": 20,
+      "targetDistance": 11,
+      "tolerance": 2.0,
+      "feedback": {
+        "why": "Lo que se mueve rápido suele sentirse más intenso para un perro. En este caso, 11 metros aproximadamente dan margen para evitar el sobresalto, y no hace falta tirar de la correa."
+      }
+    },
+    {
+      "id": "umbral_04",
+      "block": 2,
+      "tag": "Bloque II · Caso 04",
+      "prompt": "Una bicicleta viene por la calle acercándose en diagonal. Encontrá la distancia límite para que tu perro no se quede fijo mirándola.",
+      "media": "/images/games/juego4/caso4.webp",
+      "alt": "Bicicleta acercándose en diagonal",
+      "initialDistance": 20,
+      "targetDistance": 9,
+      "tolerance": 2.0,
+      "feedback": {
+        "why": "En este caso, a los 9 metros aproximadamente de distancia lateral tu perro puede seguir la bicicleta con la vista sin engancharse ni querer perseguirla."
+      }
+    },
+    {
+      "id": "umbral_05",
+      "block": 3,
+      "tag": "Bloque III · Caso 05",
+      "prompt": "Un perro reactivo viene de frente por la misma vereda, con la mirada fija. Frená en la franja de seguridad amplia.",
+      "media": "/images/games/juego4/caso5.webp",
+      "alt": "Perro en alerta acercándose de frente",
+      "initialDistance": 25,
+      "targetDistance": 15,
+      "tolerance": 3.0,
+      "feedback": {
+        "why": "Cuando el otro perro viene de frente y tenso, conviene dejar bastante más lugar: en este caso, unos 15 metros aproximadamente. Frenar o cruzar de vereda a tiempo ayuda a evitar un conflicto entre los dos."
+      }
+    },
+    {
+      "id": "umbral_06",
+      "block": 3,
+      "tag": "Bloque III · Caso 06",
+      "prompt": "Algo aparece de golpe al doblar la esquina, a velocidad media. Frená enseguida.",
+      "media": "/images/games/juego4/caso6.webp",
+      "alt": "Algo que aparece de golpe al doblar la esquina",
+      "initialDistance": 18,
+      "targetDistance": 10,
+      "tolerance": 2.5,
+      "feedback": {
+        "why": "En las esquinas sin visibilidad, frenar a los 10 metros aproximadamente da tiempo para mirar la situación con calma y decidir cómo seguir."
+      }
+    }
+  ]
+}

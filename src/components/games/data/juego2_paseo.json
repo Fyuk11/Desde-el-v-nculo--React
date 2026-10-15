@@ -1,0 +1,278 @@
+{
+  "gameId": "juego2_paseo",
+  "title": "Paseo en Sintonía",
+  "subtitle": "Quince situaciones de paseo para practicar cómo acompañar a tu compañero con calma, espacio y correa floja.",
+  "blocks": [
+    {
+      "blockId": 1,
+      "blockTitle": "Bloque I: La correa y la tensión",
+      "lunoSummary": "¡Muy bien! La correa también comunica: lo que le transmitís por ahí, tu perro lo siente. Si está tensa, siente tu apuro. Si está floja, siente calma."
+    },
+    {
+      "blockId": 2,
+      "blockTitle": "Bloque II: Sorpresas en la esquina",
+      "lunoSummary": "¡Buen trabajo! Anticiparte a lo que no se ve evita sustos y lo ayuda a mantenerse tranquilo."
+    },
+    {
+      "blockId": 3,
+      "blockTitle": "Bloque III: Cruces y movimiento en la calle",
+      "lunoSummary": "¡Muy bien! Cambiar el camino a tiempo hace que el paseo fluya en lugar de trabarse."
+    },
+    {
+      "blockId": 4,
+      "blockTitle": "Bloque IV: Cruzar la calle",
+      "lunoSummary": "¡Muy buena lectura! Sabés cuándo darle más espacio y cuándo acompañarlo con calma cuando hay mucho tránsito."
+    },
+    {
+      "blockId": 5,
+      "blockTitle": "Bloque V: Volver a casa en calma",
+      "lunoSummary": "¡Lo lograste! El paseo dejó de ser una pulseada y se volvió algo que disfrutan juntos, en sintonía."
+    }
+  ],
+  "steps": [
+    {
+      "id": "paseo_01",
+      "block": 1,
+      "tag": "Bloque I · Situación 01",
+      "type": "video",
+      "media": "/videos/games/juego2/paseo1.mp4",
+      "poster": "/images/juego2/paseo1.webp",
+      "alt": "Correa tensa ante un perro que ladra detrás de una reja",
+      "prompt": "Doblás la esquina y, de golpe, un perro ladra detrás de una reja. La correa queda tensa como una cuerda de guitarra. ¿Qué hacés?",
+      "options": [
+        { "id": "opt_1", "label": "Tirar de la correa hacia atrás para alejarlo ya", "correct": false },
+        { "id": "opt_2", "label": "Darle más correa enseguida y hacer medio paso al costado, en curva", "correct": true },
+        { "id": "opt_3", "label": "Quedarte paralizado con la correa corta", "correct": false }
+      ],
+      "feedback": { "why": "Aflojar la correa baja la tensión. Si la mantenés dura, tu perro siente que vos también estás en alerta." }
+    },
+    {
+      "id": "paseo_02",
+      "block": 1,
+      "tag": "Bloque I · Situación 02",
+      "type": "video",
+      "media": "/videos/games/juego2/paseo2.mp4",
+      "poster": "/images/juego2/paseo2.webp",
+      "alt": "Perro olfateando un tronco",
+      "prompt": "Tu perro frena en seco para olfatear un tronco y vos tenés apuro. ¿Cómo manejás la correa?",
+      "options": [
+        { "id": "opt_1", "label": "Darle un tirón para que siga", "correct": false },
+        { "id": "opt_2", "label": "Arrastrarlo despacio, con la correa siempre tensa", "correct": false },
+        { "id": "opt_3", "label": "Acompañar el freno, aflojar la correa y darle un ratito para olfatear", "correct": true }
+      ],
+      "feedback": { "why": "Olfatear lo ayuda a calmarse y a entender lo que lo rodea. Si lo apurás, se frustra." }
+    },
+    {
+      "id": "paseo_03",
+      "block": 1,
+      "tag": "Bloque I · Situación 03",
+      "type": "video",
+      "media": "/videos/games/juego2/paseo3.mp4",
+      "poster": "/images/juego2/paseo3.webp",
+      "alt": "Perro acelerando hacia comida tirada en la vereda",
+      "prompt": "Tu perro acelera de golpe porque huele comida tirada en la vereda. ¿Qué hacés?",
+      "options": [
+        { "id": "opt_1", "label": "Afirmarte, abrir una curva suave y cambiar el rumbo", "correct": true },
+        { "id": "opt_2", "label": "Tirar de la correa en sentido contrario para ganarle", "correct": false },
+        { "id": "opt_3", "label": "Gritarle 'no' fuerte mientras la correa sigue tensa", "correct": false }
+      ],
+      "feedback": { "why": "Cambiar el rumbo con anticipación evita el choque con la tentación, sin forcejeos." }
+    },
+    {
+      "id": "paseo_04",
+      "block": 2,
+      "tag": "Bloque II · Situación 04",
+      "type": "video",
+      "media": "/videos/games/juego2/paseo4.mp4",
+      "poster": "/images/juego2/paseo4.webp",
+      "alt": "Moto arrancando cerca de un perro",
+      "prompt": "Una moto arranca de golpe en el garaje de al lado y tu perro salta de costado del susto.",
+      "options": [
+        { "id": "opt_1", "label": "Acortar la correa y pegarlo a tu pierna", "correct": false },
+        { "id": "opt_2", "label": "Dejar el brazo flexible, acompañar el movimiento y ganar distancia", "correct": true },
+        { "id": "opt_3", "label": "Regañarlo por asustarse", "correct": false }
+      ],
+      "feedback": { "why": "Después de un susto, el cuerpo necesita espacio para soltar la energía. Acortar la correa de golpe lo hace sentir atrapado." }
+    },
+    {
+      "id": "paseo_05",
+      "block": 2,
+      "tag": "Bloque II · Situación 05",
+      "type": "video",
+      "media": "/videos/games/juego2/paseo5.mp4",
+      "poster": "/images/juego2/paseo5.webp",
+      "alt": "Monopatín pasando por detrás de un perro",
+      "prompt": "Un monopatín eléctrico pasa muy rápido por detrás. Tu perro gira alterado, buscando de dónde vino.",
+      "options": [
+        { "id": "opt_1", "label": "Girar bruscamente para el otro lado y enredar la correa", "correct": false },
+        { "id": "opt_2", "label": "Quedarte quieto y obligarlo a girar contra la tensión", "correct": false },
+        { "id": "opt_3", "label": "Girar con calma junto a él, dándole espacio para que la correa siga floja", "correct": true }
+      ],
+      "feedback": { "why": "Acompañar su giro con la correa floja evita que sienta una traba justo cuando está más activado." }
+    },
+    {
+      "id": "paseo_06",
+      "block": 2,
+      "tag": "Bloque II · Situación 06",
+      "type": "video",
+      "media": "/videos/games/juego2/paseo6.mp4",
+      "poster": "/images/juego2/paseo6.webp",
+      "alt": "Camión de reparto descargando cajones",
+      "prompt": "Un camión de reparto descarga cajones metálicos con un ruido enorme, a pocos metros.",
+      "options": [
+        { "id": "opt_1", "label": "Retroceder en diagonal, alejándote del ruido, con el cuerpo relajado", "correct": true },
+        { "id": "opt_2", "label": "Avanzar hacia el camión para 'enfrentar el miedo'", "correct": false },
+        { "id": "opt_3", "label": "Alzarlo en brazos sin avisar", "correct": false }
+      ],
+      "feedback": { "why": "Alejarte a tiempo del ruido es la mejor forma de ayudarlo cuando todo lo abruma." }
+    },
+    {
+      "id": "paseo_07",
+      "block": 3,
+      "tag": "Bloque III · Situación 07",
+      "type": "video",
+      "media": "/videos/games/juego2/paseo7.mp4",
+      "poster": "/images/juego2/paseo7.webp",
+      "alt": "Esquina sin visibilidad",
+      "prompt": "Llegan a una esquina sin visibilidad, con paredes altas, y se oyen pasos rápidos del otro lado.",
+      "options": [
+        { "id": "opt_1", "label": "Doblar rápido para 'ganar la esquina'", "correct": false },
+        { "id": "opt_2", "label": "Frenar un metro antes, dar más correa y mirar el espacio", "correct": true },
+        { "id": "opt_3", "label": "Acortar la correa a 20 centímetros y doblar pegado a la pared", "correct": false }
+      ],
+      "feedback": { "why": "Una pausa antes del punto ciego evita un cruce de frente con otra persona o con otro perro." }
+    },
+    {
+      "id": "paseo_08",
+      "block": 3,
+      "tag": "Bloque III · Situación 08",
+      "type": "video",
+      "media": "/videos/games/juego2/paseo8.mp4",
+      "poster": "/images/juego2/paseo8.webp",
+      "alt": "Obra en construcción junto a la vereda",
+      "prompt": "Una obra hace ruidos intermitentes de taladro junto a la vereda.",
+      "options": [
+        { "id": "opt_1", "label": "Pararte frente a la obra a mirar qué pasa", "correct": false },
+        { "id": "opt_2", "label": "Pasar por el borde más alejado de la vereda, a paso tranquilo y parejo", "correct": true },
+        { "id": "opt_3", "label": "Correr para pasar rápido, con la correa tensa", "correct": false }
+      ],
+      "feedback": { "why": "Caminar a un ritmo parejo y lejos del ruido evita que se sature, sin mostrar dudas." }
+    },
+    {
+      "id": "paseo_09",
+      "block": 3,
+      "tag": "Bloque III · Situación 09",
+      "type": "video",
+      "media": "/videos/games/juego2/paseo9.mp4",
+      "poster": "/images/juego2/paseo9.webp",
+      "alt": "Grupo de personas caminando en sentido contrario",
+      "prompt": "Un grupo grande de personas viene de frente y ocupa toda la vereda.",
+      "options": [
+        { "id": "opt_1", "label": "Abrirte paso por el medio del grupo", "correct": false },
+        { "id": "opt_2", "label": "Sentar al perro en el medio de la gente", "correct": false },
+        { "id": "opt_3", "label": "Hacerte a un costado, cerca de un árbol, y dejar pasar al grupo", "correct": true }
+      ],
+      "feedback": { "why": "Evitar el amontonamiento cuida su espacio y previene que reaccione por agobio." }
+    },
+    {
+      "id": "paseo_10",
+      "block": 4,
+      "tag": "Bloque IV · Situación 10",
+      "type": "video",
+      "media": "/videos/games/juego2/paseo10.mp4",
+      "poster": "/images/juego2/paseo10.webp",
+      "alt": "Perro asustado por una bocina en el semáforo",
+      "prompt": "Esperan el semáforo para cruzar y un auto toca bocina muy fuerte a pocos metros.",
+      "options": [
+        { "id": "opt_1", "label": "Ignorar su reacción y seguir mirando el celular", "correct": false },
+        { "id": "opt_2", "label": "Dar un paso atrás, bajar un poco el cuerpo y ofrecerle una caricia suave si la acepta", "correct": true },
+        { "id": "opt_3", "label": "Regañarlo por saltar del susto", "correct": false }
+      ],
+      "feedback": { "why": "Tu presencia tranquila lo ayuda a bajar el susto que le dio el ruido del tránsito." }
+    },
+    {
+      "id": "paseo_11",
+      "block": 4,
+      "tag": "Bloque IV · Situación 11",
+      "type": "video",
+      "media": "/videos/games/juego2/paseo11.mp4",
+      "poster": "/images/juego2/paseo11.mp4",
+      "alt": "Bicicleta pasando cerca de la senda peatonal",
+      "prompt": "Una bicicleta pasa el semáforo en rojo, muy cerca de la senda peatonal.",
+      "options": [
+        { "id": "opt_1", "label": "Frenar con suavidad su avance poniendo tu cuerpo como barrera", "correct": true },
+        { "id": "opt_2", "label": "Soltar la correa para que esquive libremente", "correct": false },
+        { "id": "opt_3", "label": "Gritarle al ciclista y tirar fuerte de la correa", "correct": false }
+      ],
+      "feedback": { "why": "Poner tu cuerpo entre él y la bicicleta tapa el estímulo de golpe, sin necesidad de tirones." }
+    },
+    {
+      "id": "paseo_12",
+      "block": 4,
+      "tag": "Bloque IV · Situación 12",
+      "type": "video",
+      "media": "/videos/games/juego2/paseo12.mp4",
+      "poster": "/images/juego2/paseo12.mp4",
+      "alt": "Cruce peatonal con tránsito en movimiento",
+      "prompt": "El semáforo se pone en verde y de pronto hay movimiento y ruido de motores por todos lados.",
+      "options": [
+        { "id": "opt_1", "label": "Cruzar corriendo para salir rápido de la calle", "correct": false },
+        { "id": "opt_2", "label": "Frenar en el medio de la calle a esperar", "correct": false },
+        { "id": "opt_3", "label": "Empezar a cruzar con paso tranquilo y la correa floja", "correct": true }
+      ],
+      "feedback": { "why": "Un ritmo parejo y la correa floja le transmiten seguridad justo donde más lo necesita." }
+    },
+    {
+      "id": "paseo_13",
+      "block": 5,
+      "tag": "Bloque V · Situación 13",
+      "type": "video",
+      "media": "/videos/games/juego2/paseo13.mp4",
+      "poster": "/images/juego2/paseo13.webp",
+      "alt": "Perro con mucha energía frente al portal de entrada",
+      "prompt": "Llegan al portal de casa y tu perro salta con mucha energía hacia la puerta.",
+      "options": [
+        { "id": "opt_1", "label": "Abrir rápido para que se descargue adentro", "correct": false },
+        { "id": "opt_2", "label": "Esperar en silencio a que baje la intensidad y te mire por su cuenta antes de abrir", "correct": true },
+        { "id": "opt_3", "label": "Forcejear con la correa hasta meterlo a los empujones", "correct": false }
+      ],
+      "feedback": { "why": "La puerta de casa tiene que ser un lugar para bajar revoluciones, no para subirlas." }
+    },
+    {
+      "id": "paseo_14",
+      "block": 5,
+      "tag": "Bloque V · Situación 14",
+      "type": "video",
+      "media": "/videos/games/juego2/paseo14.mp4",
+      "poster": "/images/juego2/paseo14.webp",
+      "alt": "Perro sacudiéndose en el hall",
+      "prompt": "Ya en el hall, tu perro intenta sacudirse y sacarse el arnés, inquieto.",
+      "options": [
+        { "id": "opt_1", "label": "Sacarle el arnés rápido para que deje de moverse", "correct": false },
+        { "id": "opt_2", "label": "Ignorar la molestia y dejárselo puesto un rato más", "correct": false },
+        { "id": "opt_3", "label": "Dejar que se sacuda tranquilo y sacarle el arnés con calma", "correct": true }
+      ],
+      "feedback": { "why": "Respetar esa última sacudida lo ayuda a soltar la tensión del paseo y a cerrar el momento en calma." }
+    },
+    {
+      "id": "paseo_15",
+      "block": 5,
+      "tag": "Bloque V · Situación 15",
+      "type": "video",
+      "media": "/videos/games/juego2/paseo15.mp4",
+      "poster": "/images/juego2/paseo15.webp",
+      "alt": "Perro descansando en casa después del paseo",
+      "prompt": "Se acomoda en su lugar de descanso y suelta un suspiro largo después del paseo.",
+      "options": [
+        { "id": "opt_1", "label": "Cuidar ese momento con silencio y tu presencia tranquila", "correct": true },
+        { "id": "opt_2", "label": "Seguir con juguetes que lo activen mucho", "correct": false },
+        { "id": "opt_3", "label": "Cambiarlo de lugar enseguida para limpiar", "correct": false }
+      ],
+      "feedback": { "why": "Después del paseo, lo que más ayuda es dejarlo descansar en calma y acompañarlo sin apuro." }
+    }
+  ],
+  "ending": {
+    "title": "¡Terminaste el paseo!",
+    "message": "Recorriste quince situaciones: la correa, las sorpresas, el tránsito y la vuelta a casa. Cada paseo es una oportunidad de acompañar a tu compañero con calma, espacio y paciencia."
+  }
+}

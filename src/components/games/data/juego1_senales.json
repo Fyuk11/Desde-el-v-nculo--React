@@ -1,0 +1,277 @@
+{
+  "gameId": "juego1_senales",
+  "title": "¿Qué me está diciendo?",
+  "subtitle": "Practicá cómo leer lo que tu compañero te dice con el cuerpo.",
+  "blocks": [
+    {
+      "blockId": 1,
+      "blockTitle": "Bloque I: Señales de calma",
+      "lunoSummary": "¡Muy bien! Los perros usan estas señales para bajar la tensión y evitar conflictos antes de que todo escale. Ya sabés reconocerlas."
+    },
+    {
+      "blockId": 2,
+      "blockTitle": "Bloque II: Cuando la tensión empieza a subir",
+      "lunoSummary": "¡Buen ojo! Notar a tiempo cuando la tensión empieza a subir te permite darle espacio antes de que se desborde."
+    },
+    {
+      "blockId": 3,
+      "blockTitle": "Bloque III: Los pequeños movimientos",
+      "lunoSummary": "¡Qué lectura tan fina! Mucho de lo que comunican pasa en gestos chiquitos, antes de que el cuerpo reaccione de forma evidente."
+    },
+    {
+      "blockId": 4,
+      "blockTitle": "Bloque IV: Distancia y espacio",
+      "lunoSummary": "¡Muy bien! Ahora sabés cómo los perros cuidan su espacio y ponen límites sin pelear."
+    },
+    {
+      "blockId": 5,
+      "blockTitle": "Bloque V: Soltar y volver a la calma",
+      "lunoSummary": "¡Lo lograste! Ya reconocés cómo tu compañero suelta la tensión y vuelve a la calma, y cómo podés acompañarlo."
+    }
+  ],
+  "steps": [
+    {
+      "id": "caso_01",
+      "block": 1,
+      "tag": "Bloque I · Caso 01",
+      "type": "video",
+      "media": "/videos/games/juego1/bloque1-caso1.mp4",
+      "poster": "/images/juego1/caso1.webp",
+      "alt": "Perro desviando la mirada",
+      "prompt": "Desvía la mirada y gira la cabeza despacio mientras otro perro se acerca. ¿Qué está comunicando?",
+      "options": [
+        { "id": "opt_1", "label": "No le interesa nada de lo que pasa alrededor", "correct": false },
+        { "id": "opt_2", "label": "Es una señal de calma: pide espacio sin confrontar", "correct": true },
+        { "id": "opt_3", "label": "Está desafiando al otro perro", "correct": false }
+      ],
+      "feedback": { "why": "Desviar la mirada y girar la cabeza son señales de calma: le dicen al otro perro 'no busco problemas'. Es su forma de pedir espacio en paz." }
+    },
+    {
+      "id": "caso_02",
+      "block": 1,
+      "tag": "Bloque I · Caso 02",
+      "type": "video",
+      "media": "/videos/games/juego1/bloque1-caso2.mp4",
+      "poster": "/images/juego1/caso2.webp",
+      "alt": "Perro bostezando después de salir a la calle",
+      "prompt": "Después de cruzar la puerta de calle, hace un bostezo largo y un parpadeo lento.",
+      "options": [
+        { "id": "opt_1", "label": "Tiene sueño porque no descansó", "correct": false },
+        { "id": "opt_2", "label": "Le molesta la temperatura", "correct": false },
+        { "id": "opt_3", "label": "Está soltando la tensión que juntó: se está calmando", "correct": true }
+      ],
+      "feedback": { "why": "Bostezar en un momento de tensión no es sueño: es una forma de soltar el estrés. Al salir a la calle, es su manera de aflojar." }
+    },
+    {
+      "id": "caso_03",
+      "block": 1,
+      "tag": "Bloque I · Caso 03",
+      "type": "video",
+      "media": "/videos/games/juego1/bloque1-caso3.mp4",
+      "poster": "/images/juego1/caso3.webp",
+      "alt": "Perro lamiéndose el hocico",
+      "prompt": "Se lame el hocico rápido cuando una mano desconocida se le acerca a la cabeza.",
+      "options": [
+        { "id": "opt_1", "label": "Está incómodo y trata de calmarse", "correct": true },
+        { "id": "opt_2", "label": "Tiene hambre o busca restos de comida", "correct": false },
+        { "id": "opt_3", "label": "Se le secó la nariz", "correct": false }
+      ],
+      "feedback": { "why": "El lamido rápido de hocico es un aviso en voz baja: está incómodo. Es una de las señales que más se ignoran." }
+    },
+    {
+      "id": "caso_04",
+      "block": 2,
+      "tag": "Bloque II · Caso 04",
+      "type": "video",
+      "media": "/videos/games/juego1/bloque2-caso4.mp4",
+      "poster": "/images/juego1/caso4.webp",
+      "alt": "Perro con la mirada fija y el cuerpo inclinado hacia adelante",
+      "prompt": "Las orejas quedan hacia adelante, el peso del cuerpo se va al frente y por un instante contiene la respiración.",
+      "options": [
+        { "id": "opt_1", "label": "Se prepara para jugar", "correct": false },
+        { "id": "opt_2", "label": "Está empezando a tensarse: toda su atención está en lo que ve", "correct": true },
+        { "id": "opt_3", "label": "Está relajado después del paseo", "correct": false }
+      ],
+      "feedback": { "why": "Cuando se pone rígido y se queda fijo, está evaluando si debe preocuparse. Es buen momento para darle espacio antes de que reaccione." }
+    },
+    {
+      "id": "caso_05",
+      "block": 2,
+      "tag": "Bloque II · Caso 05",
+      "type": "video",
+      "media": "/videos/games/juego1/bloque2-caso5.mp4",
+      "poster": "/images/juego1/caso5.webp",
+      "alt": "Perro con el cuerpo tenso ante algo que se mueve rápido",
+      "prompt": "El cuerpo se le pone duro, sobre todo de atrás, y las pupilas se ven más grandes cuando algo se mueve rápido cerca.",
+      "options": [
+        { "id": "opt_1", "label": "Curiosidad tranquila por algo nuevo", "correct": false },
+        { "id": "opt_2", "label": "Está concentrado esperando una indicación", "correct": false },
+        { "id": "opt_3", "label": "Está muy activado y a punto de reaccionar", "correct": true }
+      ],
+      "feedback": { "why": "Un cuerpo duro y pupilas grandes suelen mostrar que está muy activado y puede reaccionar en cualquier momento. Alejarlo del estímulo lo ayuda a bajar la intensidad." }
+    },
+    {
+      "id": "caso_06",
+      "block": 2,
+      "tag": "Bloque II · Caso 06",
+      "type": "video",
+      "media": "/videos/games/juego1/bloque2-caso6.mp4",
+      "poster": "/images/juego1/caso6.webp",
+      "alt": "Perro atento a un ruido lejano",
+      "prompt": "Respira más rápido y le tiembla un poquito la boca cuando escucha un ruido seco a lo lejos.",
+      "options": [
+        { "id": "opt_1", "label": "Se puso en alerta: el ruido lo sobresaltó", "correct": true },
+        { "id": "opt_2", "label": "Se emocionó porque va a recibir un premio", "correct": false },
+        { "id": "opt_3", "label": "Tiene frío", "correct": false }
+      ],
+      "feedback": { "why": "Respirar más rápido y los pequeños temblores en la cara muestran que algo lo sobresaltó y su cuerpo se puso en alerta." }
+    },
+    {
+      "id": "caso_07",
+      "block": 3,
+      "tag": "Bloque III · Caso 07",
+      "type": "video",
+      "media": "/videos/games/juego1/bloque3-caso7.mp4",
+      "poster": "/images/juego1/caso7.webp",
+      "alt": "Perro acercándose en curva a otro perro",
+      "prompt": "En vez de ir derecho, el perro camina haciendo una curva amplia para acercarse a otro perro.",
+      "options": [
+        { "id": "opt_1", "label": "Se desorientó y perdió el rumbo", "correct": false },
+        { "id": "opt_2", "label": "Se acerca en curva para no generar tensión", "correct": true },
+        { "id": "opt_3", "label": "Está buscando olores en el suelo", "correct": false }
+      ],
+      "feedback": { "why": "Acercarse en curva es una forma amable de saludar: evita ir de frente, que para otro perro puede sentirse como una amenaza." }
+    },
+    {
+      "id": "caso_08",
+      "block": 3,
+      "tag": "Bloque III · Caso 08",
+      "type": "video",
+      "media": "/videos/games/juego1/bloque3-caso8.mp4",
+      "poster": "/images/juego1/caso8.webp",
+      "alt": "Perro sentándose apenas ante algo intenso",
+      "prompt": "Frente a algo muy intenso, el perro se detiene y se sienta apenas, bajando un poco la cadera.",
+      "options": [
+        { "id": "opt_1", "label": "Se cansó de caminar", "correct": false },
+        { "id": "opt_2", "label": "Espera que le indiquen que se quede quieto", "correct": false },
+        { "id": "opt_3", "label": "Se hace más chico a propósito para calmar la situación", "correct": true }
+      ],
+      "feedback": { "why": "Bajar el cuerpo lo hace parecer más chico y menos amenazante. Es una forma de calmar el ambiente." }
+    },
+    {
+      "id": "caso_09",
+      "block": 3,
+      "tag": "Bloque III · Caso 09",
+      "type": "video",
+      "media": "/videos/games/juego1/bloque3-caso9.mp4",
+      "poster": "/images/juego1/caso9.webp",
+      "alt": "Perro parpadeando lento entre mucha gente",
+      "prompt": "Parpadea lento y gira las orejas hacia los costados en un lugar con mucha gente.",
+      "options": [
+        { "id": "opt_1", "label": "Intenta bajar la intensidad de todo lo que ve y escucha", "correct": true },
+        { "id": "opt_2", "label": "Tiene sueño porque es de noche", "correct": false },
+        { "id": "opt_3", "label": "Le molestan los ojos", "correct": false }
+      ],
+      "feedback": { "why": "El parpadeo lento suaviza la mirada y ayuda a bajar la tensión cuando hay demasiados estímulos alrededor." }
+    },
+    {
+      "id": "caso_10",
+      "block": 4,
+      "tag": "Bloque IV · Caso 10",
+      "type": "video",
+      "media": "/videos/games/juego1/bloque4-caso10.mp4",
+      "poster": "/images/juego1/caso10.webp",
+      "alt": "Perro frenando de golpe ante otro perro",
+      "prompt": "El perro se frena de golpe, como si hubiera una línea invisible que no quiere cruzar, cuando otro perro marca presencia.",
+      "options": [
+        { "id": "opt_1", "label": "Duda hacia dónde seguir el paseo", "correct": false },
+        { "id": "opt_2", "label": "Está marcando hasta dónde se siente seguro", "correct": true },
+        { "id": "opt_3", "label": "Se frenó para hacer caso", "correct": false }
+      ],
+      "feedback": { "why": "Cada perro tiene una distancia en la que se siente seguro. Reconocer ese límite evita pasarlo y que el otro se sienta invadido." }
+    },
+    {
+      "id": "caso_11",
+      "block": 4,
+      "tag": "Bloque IV · Caso 11",
+      "type": "video",
+      "media": "/videos/games/juego1/bloque4-caso11.mp4",
+      "poster": "/images/juego1/caso11.webp",
+      "alt": "Perro girando y dando la espalda",
+      "prompt": "Cuando algo se le acerca demasiado, el perro gira y le da la espalda y el costado.",
+      "options": [
+        { "id": "opt_1", "label": "Se sometió y está paralizado de miedo", "correct": false },
+        { "id": "opt_2", "label": "No le interesa jugar con el otro perro", "correct": false },
+        { "id": "opt_3", "label": "Dice 'no quiero interactuar' de forma amable, sin pelear", "correct": true }
+      ],
+      "feedback": { "why": "Darle la espalda es una forma muy educada de decir 'no quiero interactuar' sin pelear y sin generar conflicto." }
+    },
+    {
+      "id": "caso_12",
+      "block": 4,
+      "tag": "Bloque IV · Caso 12",
+      "type": "video",
+      "media": "/videos/games/juego1/bloque4-caso12.mp4",
+      "poster": "/images/juego1/caso12.webp",
+      "alt": "Perro dando un paso de costado",
+      "prompt": "Da un paso de costado, en diagonal, para mantener su distancia de una columna o de una persona.",
+      "options": [
+        { "id": "opt_1", "label": "Ajusta su distancia con calma, sin conflicto", "correct": true },
+        { "id": "opt_2", "label": "Juega a perseguir de costado", "correct": false },
+        { "id": "opt_3", "label": "Tiene las patas de atrás inestables", "correct": false }
+      ],
+      "feedback": { "why": "Moverse de costado le permite ajustar la distancia sin invadir el espacio de nadie y sin generar tensión." }
+    },
+    {
+      "id": "caso_13",
+      "block": 5,
+      "tag": "Bloque V · Caso 13",
+      "type": "video",
+      "media": "/videos/games/juego1/bloque5-caso13.mp4",
+      "poster": "/images/juego1/caso13.webp",
+      "alt": "Perro sacudiéndose",
+      "prompt": "Después de pasar un momento tenso, el perro se sacude con fuerza de la cabeza a la cola.",
+      "options": [
+        { "id": "opt_1", "label": "Se está secando porque tiene el pelo mojado", "correct": false },
+        { "id": "opt_2", "label": "Está soltando la tensión, como un reinicio", "correct": true },
+        { "id": "opt_3", "label": "Le pica la piel por parásitos", "correct": false }
+      ],
+      "feedback": { "why": "La sacudida es su forma de sacarse la tensión de encima y 'resetearse' después de un momento tenso." }
+    },
+    {
+      "id": "caso_14",
+      "block": 5,
+      "tag": "Bloque V · Caso 14",
+      "type": "video",
+      "media": "/videos/games/juego1/bloque5-caso14.mp4",
+      "poster": "/images/juego1/caso14.webp",
+      "alt": "Perro suspirando al echarse en la alfombra",
+      "prompt": "Cuando por fin se echa en la alfombra, suelta un suspiro profundo por la nariz y cierra los ojos.",
+      "options": [
+        { "id": "opt_1", "label": "Se queja porque está agotado", "correct": false },
+        { "id": "opt_2", "label": "Tiene problemas para respirar", "correct": false },
+        { "id": "opt_3", "label": "Pasó al descanso: se siente a salvo", "correct": true }
+      ],
+      "feedback": { "why": "El suspiro profundo suele mostrar que la tensión bajó y que se siente a salvo para descansar." }
+    },
+    {
+      "id": "caso_15",
+      "block": 5,
+      "tag": "Bloque V · Caso 15",
+      "type": "video",
+      "media": "/videos/games/juego1/bloque5-caso15.mp4",
+      "alt": "Perro buscando la mirada de su tutor",
+      "prompt": "Después de una situación difícil, el perro levanta la vista por su cuenta, te busca con la mirada y afloja la mandíbula.",
+      "options": [
+        { "id": "opt_1", "label": "Se calmó con tu compañía y vuelve a conectar con vos", "correct": true },
+        { "id": "opt_2", "label": "Está esperando una golosina como premio", "correct": false },
+        { "id": "opt_3", "label": "Se distrajo con un ruido cualquiera", "correct": false }
+      ],
+      "feedback": { "why": "Cuando después de un momento difícil te busca por su cuenta, está usando el vínculo como refugio seguro." }
+    }
+  ],
+  "ending": {
+    "title": "¡Terminaste los cinco bloques!",
+    "message": "Practicaste cómo leer las señales de calma, la tensión, los pequeños movimientos, el espacio y el volver a la calma. Seguí observando a tu compañero con curiosidad: cada perro tiene su propia forma de hablar."
+  }
+}

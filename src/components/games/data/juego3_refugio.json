@@ -1,0 +1,132 @@
+{
+  "id": "juego3_refugio",
+  "title": "Refugio y Zonas de Calma",
+  "subtitle": "Reconocé cómo está tu perro y armale un espacio donde se sienta seguro.",
+  "ending": {
+    "title": "¡Gran trabajo en equipo!",
+    "message": "Completaste el recorrido de lectura y espacio. Saber cuándo tu perro necesita calma y dónde ubicarlo es una de las mejores formas de cuidarlo."
+  },
+  "blocks": [
+    {
+      "blockId": 1,
+      "blockTitle": "Bloque I: ¿Cómo está su energía?",
+      "lunoSummary": "La energía de tu perro no es fija: sube y baja según lo que pasa a su alrededor. Si te acercás con calma, le transmitís seguridad."
+    },
+    {
+      "blockId": 2,
+      "blockTitle": "Bloque II: Pequeñas señales del cuerpo",
+      "lunoSummary": "El estrés o la incomodidad no siempre se notan con ladridos. Mirar detalles sutiles en las orejas o en el hocico te avisa a tiempo si necesita un respiro."
+    },
+    {
+      "blockId": 3,
+      "blockTitle": "Bloque III: El lugar ideal para descansar",
+      "lunoSummary": "Un refugio seguro se arma eligiendo el lugar de la casa con la distancia y la tranquilidad justas para que pueda bajar revoluciones sin sentirse acorralado."
+    }
+  ],
+  "steps": [
+    {
+      "id": "refugio_01",
+      "block": 1,
+      "type": "frecuencia",
+      "prompt": "Tu perro acaba de entrar a la sala después de un paseo intenso. Respira rápido y se detiene frente a su colchoneta. ¿Cómo describirías su nivel de energía ahora?",
+      "media": "/images/games/juego3/nodo1.webp",
+      "alt": "Perro entrando a la sala después del paseo",
+      "correctFrequency": 95.0,
+      "feedback": {
+        "why": "Tiene la energía activa y atenta: ni en alerta total ni dormido. Es un buen momento para acompañarlo en silencio hasta que se eche a descansar."
+      }
+    },
+    {
+      "id": "refugio_02",
+      "block": 1,
+      "type": "frecuencia",
+      "prompt": "Se escucha una lluvia suave afuera y tu perro está echado, con la cabeza sobre las patas, parpadeando despacio. Ajustá el medidor a cómo está.",
+      "media": "/images/games/juego3/nodo2.webp",
+      "alt": "Perro descansando en su cama en un día de lluvia",
+      "correctFrequency": 82.5,
+      "feedback": {
+        "why": "Está en calma profunda, descansando de verdad. Su cuerpo aprovecha para recuperar energía."
+      }
+    },
+    {
+      "id": "refugio_03",
+      "block": 1,
+      "type": "frecuencia",
+      "prompt": "Suena el timbre. Tu perro se levanta de golpe, con las orejas hacia adelante y el cuerpo duro. ¿Cómo se ve su energía ahora?",
+      "media": "/images/games/juego3/nodo3.webp",
+      "alt": "Perro en alerta por el timbre",
+      "correctFrequency": 108.0,
+      "feedback": {
+        "why": "Pasó a un pico de alerta y tensión por la sorpresa. Lo mejor es darle espacio o ponerte en el medio con suavidad para que baje la agitación."
+      }
+    },
+    {
+      "id": "refugio_04",
+      "block": 2,
+      "type": "hotspot",
+      "prompt": "Un visitante se acerca a acariciar a tu perro mientras descansa. Tocá en la imagen la parte del cuerpo que muestra con más claridad que prefiere espacio.",
+      "media": "/images/games/juego3/nodo4.webp",
+      "alt": "Visitante acercando la mano a un perro en su colchoneta",
+      "correctHotspotId": "hs_orejas",
+      "hotspots": [
+        { "id": "hs_orejas", "top": 35, "left": 48, "label": "Orejas hacia atrás y quietas" },
+        { "id": "hs_lomo", "top": 55, "left": 30, "label": "Cuerpo estirado sobre la manta" },
+        { "id": "hs_cola", "top": 70, "left": 15, "label": "Cola apoyada, sin movimiento" }
+      ],
+      "feedback": {
+        "why": "Las orejas hacia atrás y la mirada esquiva son una forma clara y educada de pedir que respetemos su momento de tranquilidad."
+      }
+    },
+    {
+      "id": "refugio_05",
+      "block": 2,
+      "type": "hotspot",
+      "prompt": "Mirá la postura de tu perro al recibir un juguete nuevo. Tocá el punto donde notás más tensión.",
+      "media": "/images/games/juego3/nodo5.webp",
+      "alt": "Perro explorando un juguete",
+      "correctHotspotId": "hs_hocico",
+      "hotspots": [
+        { "id": "hs_hocico", "top": 45, "left": 62, "label": "Boca cerrada con tensión en la mandíbula" },
+        { "id": "hs_patas", "top": 75, "left": 50, "label": "Patas delanteras apoyadas y relajadas" },
+        { "id": "hs_cuello", "top": 30, "left": 40, "label": "Cuello erguido, prestando atención" }
+      ],
+      "feedback": {
+        "why": "La tensión en la boca y en la mandíbula frente a un objeto suele mostrar que está algo acelerado o tenso."
+      }
+    },
+    {
+      "id": "refugio_06",
+      "block": 3,
+      "type": "matriz",
+      "prompt": "Llega gente a casa y tu perro camina buscando dónde ubicarse. ¿Cuál es el mejor lugar para armar su refugio?",
+      "media": "/images/games/juego3/nodo6.webp",
+      "alt": "Perro caminando durante una reunión en casa",
+      "correctZoneId": "q_apartado",
+      "options": [
+        { "id": "q_apartado", "label": "🏠 En un rincón apartado y tranquilo de la sala, desde donde puede mirar sin presión" },
+        { "id": "q_centro", "label": "🛋️ En la alfombra del medio, junto al sillón, por donde camina toda la gente" },
+        { "id": "q_pasillo", "label": "🚪 En el pasillo que va al baño, donde pasan las visitas todo el tiempo" }
+      ],
+      "feedback": {
+        "why": "Un rincón apartado del movimiento le permite mirar la reunión a su ritmo, sin sentirse acorralado ni obligado a interactuar."
+      }
+    },
+    {
+      "id": "refugio_07",
+      "block": 3,
+      "type": "matriz",
+      "prompt": "Tu perro tuvo un día con muchos estímulos y necesita calmarse masticando algo. ¿Dónde conviene preparar su lugar para masticar?",
+      "media": "/images/games/juego3/nodo7.webp",
+      "alt": "Perro masticando en su lugar de descanso con luz suave",
+      "correctZoneId": "q_tranquilo",
+      "options": [
+        { "id": "q_tranquilo", "label": "🌙 En su cama, en un ambiente silencioso, con luz tenue y sin gente pasando" },
+        { "id": "q_cocina", "label": "🍳 En la cocina, mientras preparamos la cena y suenan los platos" },
+        { "id": "q_comedor", "label": "🍽️ Justo debajo de la mesa, mientras la familia almuerza" }
+      ],
+      "feedback": {
+        "why": "Para disfrutar de masticar y soltar la tensión del día, necesita un lugar tranquilo, sin interrupciones y sin que nadie pase cerca ni le saque su premio."
+      }
+    }
+  ]
+}

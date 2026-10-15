@@ -1,0 +1,37 @@
+{
+  "id": "juego5_respira",
+  "title": "Respirá con Luno",
+  "subtitle": "Una pausa de respiración antes de salir a pasear. Si en algún momento te sentís incómodo, respirá a tu ritmo.",
+  "videoBackground": "/videos/games/juego5/calm_loop.mp4",
+  "ending": {
+    "title": "¡Listos para salir en calma!",
+    "message": "Completaste la pausa para bajar las revoluciones antes del paseo. Salir desde la calma es una linda forma de empezar a caminar juntos.",
+    "video": "/videos/games/juego5/calm_ending.mp4"
+  },
+  "phases": [
+    {
+      "id": "fase_1",
+      "title": "Fase I · Aflojá tu cuerpo",
+      "subtitle": "Soltá la tensión antes de conectar con tu compañero.",
+      "guide": "Soltá los hombros, aflojá la mandíbula y sostené la correa sin tensión.",
+      "cyclesRequired": 2,
+      "lunoInsight": "Tu perro puede sentir tu tensión a través de la correa. Cuando aflojás el cuerpo, le mostrás que no hay nada de qué preocuparse."
+    },
+    {
+      "id": "fase_2",
+      "title": "Fase II · Respiración 4-4-6",
+      "subtitle": "Un ritmo parejo para ir bajando las revoluciones.",
+      "guide": "Inhalá en 4 segundos, sostené 4 y exhalá en 6, siguiendo el ritmo del círculo. Si sostener el aire te incomoda, saltealo y seguí con la exhalación.",
+      "cyclesRequired": 2,
+      "lunoInsight": "Alargar la exhalación ayuda a ir soltando el cuerpo. Tu calma es el punto de partida del paseo."
+    },
+    {
+      "id": "fase_3",
+      "title": "Fase III · Hacia la puerta",
+      "subtitle": "Llevá esa calma hasta la puerta de salida.",
+      "guide": "Mantené el ritmo mientras te acercás al picaporte para abrir.",
+      "cyclesRequired": 2,
+      "lunoInsight": "Cruzar la puerta en calma ayuda a que el paseo empiece tranquilo. El paseo empieza dentro de casa."
+    }
+  ]
+}

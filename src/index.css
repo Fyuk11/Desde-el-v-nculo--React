@@ -1,0 +1,94 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Inter:wght@300;400;500;600&display=swap');
+
+@theme {
+  /* Paleta Warm / Organic / Botanical */
+  --color-brand-bg: #F7F5F0;          /* Fondo Crema/Arena Warm */
+  --color-brand-card: #FFFFFF;        /* Tarjetas Blanco Cálido */
+  --color-brand-border: #E5E2D8;      /* Bordes suaves orgánicos */
+
+  --color-brand-dark: #1C2621;        /* Texto principal / Verde Bosque muy oscuro */
+  --color-brand-muted: #5A635E;       /* Texto secundario */
+
+  --color-brand-sage: #4A6454;        /* Acento Verde Sage */
+  --color-brand-sage-light: #EEFAF1;  /* Fondos sutiles Sage */
+  --color-brand-sage-dark: #24332A;   /* Fondos oscuros cálidos para contraste */
+
+  --color-brand-gold: #C29B38;        /* Acentos cálidos */
+
+  /* Tipografías */
+  --font-serif: 'Fraunces', Georgia, serif;
+  --font-sans: 'Inter', system-ui, sans-serif;
+
+  /* Formas Orgánicas */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-arch: 12rem 12rem 8px 8px;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-brand-bg);
+    color: var(--color-brand-dark);
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4, .font-serif {
+    font-family: var(--font-serif);
+  }
+  
+  ::selection {
+    background-color: #DCE8E0;
+    color: #1C2621;
+  }
+}
+
+/* Scrollbar Orgánica */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F7F5F0;
+}
+::-webkit-scrollbar-thumb {
+  background: #C2BEB0;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #4A6454;
+}
+
+/* Animación mesh suave para Luno */
+@keyframes meshGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-mesh-bg {
+  background: linear-gradient(-45deg, #24332A, #1D2821, #2E4035, #1A241E);
+  background-size: 400% 400%;
+  animation: meshGradient 14s ease infinite;
+}
+
+
+
+
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
