@@ -97,6 +97,11 @@ export default function GuiasGrid() {
   const [activeTitle, setActiveTitle] = useState('');
 
   const abrirVisor = (pdf) => {
+    // En dispositivos móviles, abrir directamente en pestaña nueva para garantizar lectura fluida
+    if (window.innerWidth < 768) {
+      window.open(pdf.fileUrl, '_blank');
+      return;
+    }
     setActivePdfUrl(pdf.fileUrl);
     setActiveTitle(pdf.title);
   };
@@ -125,13 +130,13 @@ export default function GuiasGrid() {
           <div 
             key={pdf.id}
             id={pdf.id}
-            className={`bg-[#141615] border border-[#26211C] hover:border-amber-500/50 p-5 md:p-6 transition-all flex flex-col md:flex-row md:items-center justify-between gap-6 relative overflow-hidden group border-l-4 ${pdf.accentColor}`}
+            className={`bg-[#141615] border border-[#26211C] hover:border-amber-500/50 p-4 sm:p-6 transition-all flex flex-col md:flex-row md:items-center justify-between gap-4 sm:gap-6 relative overflow-hidden group border-l-4 ${pdf.accentColor}`}
           >
             {/* Contenido e Información */}
-            <div className="flex items-start md:items-center gap-5 max-w-2xl">
+            <div className="flex items-start md:items-center gap-4 sm:gap-5 max-w-2xl">
               
               {/* Miniatura / Cover Preview */}
-              <div className="w-16 h-20 md:w-20 md:h-24 bg-stone-900 border border-stone-800 shrink-0 overflow-hidden relative rounded-sm shadow-md hidden sm:block">
+              <div className="w-14 h-18 sm:w-16 sm:h-20 md:w-20 md:h-24 bg-stone-900 border border-stone-800 shrink-0 overflow-hidden relative rounded-sm shadow-md">
                 <img 
                   src={pdf.coverImage} 
                   alt={pdf.title} 
@@ -141,29 +146,29 @@ export default function GuiasGrid() {
                 <span className="absolute bottom-1 right-1 text-[8px] font-mono text-amber-400 font-bold">PDF</span>
               </div>
 
-              <div className="space-y-2">
-                <div className="flex flex-wrap items-center gap-3 text-[10px] font-mono">
+              <div className="space-y-1.5 sm:space-y-2">
+                <div className="flex flex-wrap items-center gap-2 sm:gap-3 text-[10px] font-mono">
                   <span className={`px-2 py-0.5 border uppercase font-bold tracking-wider ${pdf.tagColor}`}>
                     {pdf.tag}
                   </span>
-                  <span className="text-stone-400 font-mono">{pdf.meta}</span>
+                  <span className="text-stone-400 font-mono text-[9px] sm:text-[10px]">{pdf.meta}</span>
                 </div>
 
-                <h3 className="text-lg md:text-xl font-serif text-stone-100 font-bold group-hover:text-amber-200 transition-colors">
+                <h3 className="text-base sm:text-lg md:text-xl font-serif text-stone-100 font-bold group-hover:text-amber-200 transition-colors leading-snug">
                   {pdf.title}
                 </h3>
 
-                <p className="text-xs text-stone-400 font-light leading-relaxed">
+                <p className="text-xs text-stone-400 font-light leading-relaxed line-clamp-2 sm:line-clamp-none">
                   {pdf.description}
                 </p>
               </div>
             </div>
 
             {/* Acciones */}
-            <div className="flex items-center gap-3 flex-shrink-0 self-end md:self-auto">
+            <div className="flex items-center gap-2.5 sm:gap-3 flex-shrink-0 self-end md:self-auto w-full md:w-auto justify-end pt-2 md:pt-0 border-t md:border-t-0 border-stone-800">
               <button 
                 onClick={() => abrirVisor(pdf)}
-                className="px-5 py-3 bg-[#1A1E1C] hover:bg-amber-950/40 text-stone-200 hover:text-amber-300 border border-[#2E3833] hover:border-amber-500/50 text-xs font-mono uppercase tracking-wider transition-all flex items-center gap-2 cursor-pointer shadow-md"
+                className="flex-1 md:flex-none px-4 sm:px-5 py-2.5 sm:py-3 bg-[#1A1E1C] hover:bg-amber-950/40 text-stone-200 hover:text-amber-300 border border-[#2E3833] hover:border-amber-500/50 text-[11px] sm:text-xs font-mono uppercase tracking-wider transition-all flex items-center justify-center gap-2 cursor-pointer shadow-md"
               >
                 <span>📖</span>
                 <span>VER EN PANTALLA</span>
@@ -172,7 +177,7 @@ export default function GuiasGrid() {
               <a 
                 href={pdf.fileUrl} 
                 download 
-                className="p-3 bg-amber-600 hover:bg-amber-500 text-stone-950 font-bold transition-colors cursor-pointer shadow-md flex items-center justify-center text-sm"
+                className="p-2.5 sm:p-3 bg-amber-600 hover:bg-amber-500 text-stone-950 font-bold transition-colors cursor-pointer shadow-md flex items-center justify-center text-sm"
                 title="Descargar PDF"
               >
                 ↓
@@ -182,7 +187,7 @@ export default function GuiasGrid() {
         ))}
       </div>
 
-      {/* 📖 MODAL DE LECTURA EN PANTALLA COMPLETA */}
+      {/* 📖 MODAL DE LECTURA EN PANTALLA COMPLETA (Solo Escritorio / Tablets) */}
       <AnimatePresence>
         {activePdfUrl && (
           <motion.div 

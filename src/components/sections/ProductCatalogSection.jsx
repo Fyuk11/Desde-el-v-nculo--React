@@ -34,12 +34,12 @@ export default function ProductCatalogSection() {
             const isFeatured = product.featured || idx === 0;
             const isPack = product.id === 'pack-completo' || product.isPack;
 
-            // PRECIO CORRECTO: Extrae del bundle pack si es el pack completo, o del single/precio general si es individual
+            // PRECIO CORRECTO
             const priceDisplay = isPack
               ? (product.bundles?.pack?.price || 24)
               : (product.price || product.bundles?.single?.price || 18);
 
-            // LINK DE HOTMART CORRECTO: Extrae el link del pack completo o el link individual según corresponda
+            // LINK DE HOTMART CORRECTO
             const hotmartLink = isPack
               ? (product.bundles?.pack?.hotmartUrl || product.buyUrl || "#")
               : (product.bundles?.single?.hotmartUrl || product.buyUrl || "#");
@@ -87,7 +87,7 @@ export default function ProductCatalogSection() {
                     </div>
 
                     {/* Contenido Informativo */}
-                    <div className="lg:col-span-7 p-8 sm:p-10 flex flex-col justify-between bg-[#FFFFFF]">
+                    <div className="lg:col-span-7 p-6 sm:p-10 flex flex-col justify-between bg-[#FFFFFF]">
                       <div>
                         <div className="flex items-center justify-between gap-4 mb-4">
                           <span className="text-[11px] uppercase tracking-[0.2em] text-[#3F5E4D] font-bold">
@@ -99,29 +99,29 @@ export default function ProductCatalogSection() {
                           </div>
                         </div>
 
-                        <h3 className="font-serif text-3xl sm:text-4xl font-normal text-[#1C1F1D] mb-4 group-hover:text-[#3F5E4D] transition-colors leading-tight">
+                        <h3 className="font-serif text-2xl sm:text-4xl font-normal text-[#1C1F1D] mb-4 group-hover:text-[#3F5E4D] transition-colors leading-tight">
                           {product.title}
                         </h3>
 
-                        <p className="text-sm text-[#525754] font-light leading-relaxed mb-6">
+                        <p className="text-xs sm:text-sm text-[#525754] font-light leading-relaxed mb-6">
                           {descriptionText}
                         </p>
 
                         <div className="grid grid-cols-2 gap-2 mb-8 pt-2">
                           <div className="flex items-center gap-2 text-xs text-[#2A2E2C]">
-                            <CheckCircle2 className="w-4 h-4 text-[#3F5E4D]" />
+                            <CheckCircle2 className="w-4 h-4 text-[#3F5E4D] shrink-0" />
                             <span>Acceso de por vida</span>
                           </div>
                           <div className="flex items-center gap-2 text-xs text-[#2A2E2C]">
-                            <CheckCircle2 className="w-4 h-4 text-[#3F5E4D]" />
+                            <CheckCircle2 className="w-4 h-4 text-[#3F5E4D] shrink-0" />
                             <span>Ebook digital</span>
                           </div>
                           <div className="flex items-center gap-2 text-xs text-[#2A2E2C]">
-                            <CheckCircle2 className="w-4 h-4 text-[#3F5E4D]" />
+                            <CheckCircle2 className="w-4 h-4 text-[#3F5E4D] shrink-0" />
                             <span>Ejercicios prácticos</span>
                           </div>
                           <div className="flex items-center gap-2 text-xs text-[#2A2E2C]">
-                            <CheckCircle2 className="w-4 h-4 text-[#3F5E4D]" />
+                            <CheckCircle2 className="w-4 h-4 text-[#3F5E4D] shrink-0" />
                             <span>Sistémico Emocional Cognitivo</span>
                           </div>
                         </div>
@@ -143,12 +143,13 @@ export default function ProductCatalogSection() {
                             </p>
                           </div>
 
-                          <div className="flex items-center gap-3 w-full sm:w-auto">
+                          {/* Botonera Destacada Optimizada para Móvil */}
+                          <div className="grid grid-cols-2 gap-2 w-full sm:w-auto">
                             <Link
                               to={`/productos/${product.id}`}
-                              className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-5 py-3.5 bg-[#F4F1EA] border border-[#D5D0C3] text-[#1C1F1D] text-xs uppercase tracking-[0.15em] font-medium rounded-xl hover:bg-[#EAE6DC] transition-all"
+                              className="inline-flex items-center justify-center gap-1.5 px-4 py-3.5 bg-[#F4F1EA] border border-[#D5D0C3] text-[#1C1F1D] text-xs uppercase tracking-[0.1em] font-medium rounded-xl hover:bg-[#EAE6DC] transition-all text-center cursor-pointer"
                             >
-                              <Eye className="w-4 h-4 text-[#525754]" />
+                              <Eye className="w-4 h-4 text-[#525754] shrink-0" />
                               <span>Detalles</span>
                             </Link>
 
@@ -156,10 +157,10 @@ export default function ProductCatalogSection() {
                               href={hotmartLink}
                               target="_blank"
                               rel="noreferrer"
-                              className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-[#3F5E4D] text-white text-xs uppercase tracking-[0.15em] font-medium rounded-xl hover:bg-[#2F473A] transition-all shadow-md shadow-[#3F5E4D]/20"
+                              className="inline-flex items-center justify-center gap-1.5 px-4 py-3.5 bg-[#3F5E4D] text-white text-xs uppercase tracking-[0.1em] font-medium rounded-xl hover:bg-[#2F473A] transition-all shadow-md text-center cursor-pointer"
                             >
-                              <span>Comprar Ahora</span>
-                              <ExternalLink className="w-4 h-4" />
+                              <span>Comprar</span>
+                              <ExternalLink className="w-4 h-4 shrink-0" />
                             </a>
                           </div>
                         </div>
@@ -197,11 +198,11 @@ export default function ProductCatalogSection() {
                           {isPack ? "Pack de Guías & Ebooks" : "Guía Práctica & Ebook"}
                         </span>
 
-                        <h3 className="font-serif text-2xl sm:text-3xl font-normal text-[#1C1F1D] mb-3 group-hover:text-[#3F5E4D] transition-colors leading-snug">
+                        <h3 className="font-serif text-xl sm:text-2xl font-normal text-[#1C1F1D] mb-3 group-hover:text-[#3F5E4D] transition-colors leading-snug">
                           {product.title}
                         </h3>
 
-                        <p className="text-sm text-[#525754] font-light leading-relaxed mb-4 line-clamp-3">
+                        <p className="text-xs sm:text-sm text-[#525754] font-light leading-relaxed mb-4 line-clamp-3">
                           {descriptionText}
                         </p>
                       </div>
@@ -210,7 +211,7 @@ export default function ProductCatalogSection() {
                     <div className="px-6 pb-6 sm:px-8 sm:pb-8 pt-0">
                       <div className="w-full h-[1px] bg-[#E2DFD7] mb-5" />
 
-                      <div className="flex items-center justify-between gap-4">
+                      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                         <div>
                           <span className="text-[10px] uppercase tracking-wider text-[#757A77] block mb-0.5">
                             Inversión
@@ -223,23 +224,24 @@ export default function ProductCatalogSection() {
                           </p>
                         </div>
 
-                        <div className="flex items-center gap-2">
+                        {/* Botonera Estándar Optimizada para Móvil */}
+                        <div className="grid grid-cols-2 gap-2 w-full sm:w-auto">
                           <Link
                             to={`/productos/${product.id}`}
-                            className="inline-flex items-center justify-center gap-1.5 px-4 py-3 bg-[#F4F1EA] border border-[#D5D0C3] text-[#1C1F1D] text-xs uppercase tracking-[0.15em] font-medium rounded-xl hover:bg-[#EAE6DC] transition-all"
+                            className="inline-flex items-center justify-center gap-1.5 px-3 py-3 bg-[#F4F1EA] border border-[#D5D0C3] text-[#1C1F1D] text-[11px] sm:text-xs uppercase tracking-[0.1em] font-medium rounded-xl hover:bg-[#EAE6DC] transition-all text-center cursor-pointer"
                           >
-                            <Eye className="w-4 h-4 text-[#525754]" />
-                            <span>Ver</span>
+                            <Eye className="w-3.5 h-3.5 text-[#525754] shrink-0" />
+                            <span>Detalles</span>
                           </Link>
 
                           <a
                             href={hotmartLink}
                             target="_blank"
                             rel="noreferrer"
-                            className="inline-flex items-center justify-center gap-1.5 px-5 py-3 bg-[#3F5E4D] text-white text-xs uppercase tracking-[0.15em] font-medium rounded-xl hover:bg-[#2F473A] transition-all"
+                            className="inline-flex items-center justify-center gap-1.5 px-3 py-3 bg-[#3F5E4D] text-white text-[11px] sm:text-xs uppercase tracking-[0.1em] font-medium rounded-xl hover:bg-[#2F473A] transition-all text-center cursor-pointer"
                           >
                             <span>Comprar</span>
-                            <ExternalLink className="w-4 h-4" />
+                            <ExternalLink className="w-3.5 h-3.5 shrink-0" />
                           </a>
                         </div>
                       </div>
