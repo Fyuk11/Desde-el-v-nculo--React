@@ -487,7 +487,7 @@ export default function BibliotecaPage() {
 
               <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
                 <a 
-                  href="https://pay.hotmart.com/tu-link-de-hotmart-aqui" 
+                  href="https://go.hotmart.com/X108057207S?dp=1" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="px-8 py-4 bg-amber-500 hover:bg-amber-400 text-stone-950 font-bold text-xs font-mono uppercase tracking-widest transition-all shadow-2xl text-center cursor-pointer rounded-sm transform hover:scale-[1.02]"
@@ -650,7 +650,7 @@ export default function BibliotecaPage() {
                           </button>
 
                           <a 
-                            href="https://pay.hotmart.com/tu-link-de-hotmart-aqui" 
+                            href="https://go.hotmart.com/X108057207S?dp=1" 
                             target="_blank" 
                             rel="noopener noreferrer"
                             className="px-6 py-3 bg-amber-500 hover:bg-amber-400 text-stone-950 font-bold text-[11px] uppercase tracking-wider cursor-pointer shadow-lg"
@@ -796,7 +796,7 @@ export default function BibliotecaPage() {
                   </div>
 
                   <a 
-                    href="https://pay.hotmart.com/tu-link-de-hotmart-aqui" 
+                    href="https://go.hotmart.com/X108057207S?dp=1" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="w-full sm:w-auto px-10 py-4 bg-amber-500 hover:bg-amber-400 text-stone-950 font-bold text-xs font-mono uppercase tracking-widest transition-all shadow-2xl text-center cursor-pointer rounded-sm transform hover:scale-[1.02]"
