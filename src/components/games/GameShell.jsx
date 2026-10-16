@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 
-// Motores de Juego Actualizados (Todos con ./engines/)
+// Motores de Juego (Todos con ./engines/)
 import SignalReaderEngine from './engines/SignalReaderEngine';
 import TacticalSliderEngine from './engines/TacticalSliderEngine';
 import RadarDecoderEngine from './engines/RadarDecoderEngine';
@@ -52,26 +52,30 @@ export default function GameShell() {
   return (
     <div className="fixed inset-0 w-screen h-[100dvh] bg-[#020504] text-[#E8E6E1] flex flex-col justify-between overflow-hidden z-50 select-none">
       
-      {/* HUD Superior */}
-      <header className="w-full px-6 py-4 flex items-center justify-between border-b border-cyan-500/20 bg-[#030A07]/95 backdrop-blur-xl shrink-0 z-50 shadow-lg">
+      {/* HUD Superior (Adaptado para mobile) */}
+      <header className="w-full px-3 py-2.5 sm:px-6 sm:py-4 flex items-center justify-between border-b border-cyan-500/20 bg-[#030A07]/95 backdrop-blur-xl shrink-0 z-50 shadow-lg gap-2">
         <button 
           onClick={() => navigate('/biblioteca')}
-          className="px-4 py-2 bg-cyan-950/60 hover:bg-cyan-900/80 border border-cyan-500/40 rounded-xl text-xs font-mono text-cyan-200 transition-all flex items-center gap-2 group cursor-pointer shadow-md"
+          className="px-3 py-1.5 sm:px-4 sm:py-2 bg-cyan-950/60 hover:bg-cyan-900/80 border border-cyan-500/40 rounded-xl text-xs font-mono text-cyan-200 transition-all flex items-center gap-1.5 group cursor-pointer shadow-md shrink-0"
         >
           <span className="group-hover:-translate-x-0.5 transition-transform text-cyan-400 font-bold">←</span> 
-          <span>Salir al Hub</span>
+          <span className="hidden xs:inline">Salir al Hub</span>
+          <span className="xs:hidden">Hub</span>
         </button>
 
-        <div className="flex flex-col items-center">
-          <span className="text-[10px] font-mono tracking-[0.2em] text-cyan-400 uppercase">Sala de Práctica Activa</span>
-          <h1 className="text-sm md:text-base font-serif text-white tracking-wide">
+        <div className="flex flex-col items-center text-center overflow-hidden px-1">
+          <span className="text-[9px] sm:text-[10px] font-mono tracking-[0.15em] sm:tracking-[0.2em] text-cyan-400 uppercase truncate max-w-[180px] sm:max-w-none">
+            Sala de Práctica
+          </span>
+          <h1 className="text-xs sm:text-sm md:text-base font-serif text-white tracking-wide truncate max-w-[200px] sm:max-w-none">
             {config.data.title}
           </h1>
         </div>
 
         <button 
           onClick={() => setShowSettings(!showSettings)}
-          className="p-2.5 bg-cyan-950/60 hover:bg-cyan-900/80 border border-cyan-500/40 rounded-xl text-xs text-cyan-200 transition-all cursor-pointer shadow-md"
+          className="p-2 sm:p-2.5 bg-cyan-950/60 hover:bg-cyan-900/80 border border-cyan-500/40 rounded-xl text-xs text-cyan-200 transition-all cursor-pointer shadow-md shrink-0"
+          aria-label="Ajustes"
         >
           ⚙️
         </button>
@@ -84,11 +88,11 @@ export default function GameShell() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.95 }}
-            className="absolute top-20 right-6 z-50 w-64 bg-[#04110C] border border-cyan-500/40 rounded-2xl p-4 shadow-2xl backdrop-blur-2xl space-y-3"
+            className="absolute top-14 sm:top-20 right-3 sm:right-6 z-50 w-60 sm:w-64 bg-[#04110C] border border-cyan-500/40 rounded-2xl p-4 shadow-2xl backdrop-blur-2xl space-y-3"
           >
             <div className="flex justify-between items-center border-b border-cyan-500/20 pb-2">
               <span className="text-xs font-mono text-cyan-400 uppercase">Ajustes de Sesión</span>
-              <button onClick={() => setShowSettings(false)} className="text-stone-400 hover:text-white text-xs cursor-pointer">✕</button>
+              <button onClick={() => setShowSettings(false)} className="text-stone-400 hover:text-white text-xs cursor-pointer p-1">✕</button>
             </div>
             <label className="flex items-center justify-between text-xs text-stone-300 cursor-pointer">
               <span>Reducir movimiento</span>
@@ -103,13 +107,20 @@ export default function GameShell() {
         )}
       </AnimatePresence>
 
-      {/* Contenedor Central del Mini-Juego (Expandido al 100% real sin max-w) */}
-      <main className="w-full flex-1 px-4 md:px-6 flex flex-col justify-center overflow-y-auto my-auto py-2 relative z-20">
-        <EngineComponent data={config.data} onUpdateLuno={setLunoState} preferences={preferences} lunoState={lunoState} />
+      {/* Contenedor Central del Mini-Juego (Con scroll fluido e independiente en mobile) */}
+      <main className="w-full flex-1 px-3 md:px-6 flex flex-col justify-start sm:justify-center overflow-y-auto overscroll-contain py-4 relative z-20">
+        <div className="w-full max-w-4xl mx-auto my-auto">
+          <EngineComponent 
+            data={config.data} 
+            onUpdateLuno={setLunoState} 
+            preferences={preferences} 
+            lunoState={lunoState} 
+          />
+        </div>
       </main>
 
       {/* Footer minimalista */}
-      <footer className="w-full py-2 px-6 text-center border-t border-cyan-500/10 bg-[#030A07] text-[10px] font-mono text-stone-400 shrink-0 z-20">
+      <footer className="w-full py-1.5 sm:py-2 px-4 text-center border-t border-cyan-500/10 bg-[#030A07] text-[9px] sm:text-[10px] font-mono text-stone-400 shrink-0 z-20">
         DESDE EL VÍNCULO — EXPERIENCIA PRIVADA DE ENTRENAMIENTO ETOLÓGICO
       </footer>
 

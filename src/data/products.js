@@ -4,7 +4,7 @@ export const products = [
     title: 'Curso Digital: Educando desde el Vínculo',
     badge: '+500 familias transformadas',
     subtitle: 'Un viaje hacia la comprensión, el respeto y la convivencia armónica con tu compañero canino.',
-    image: '/public/images/productos/Curso-Educando-desde-el-vinculo/Educando desde el Vínculo.webp',
+    image: '/images/productos/Curso-Educando-desde-el-vinculo/Educando desde el Vínculo.webp',
     gallery: [
       '/images/productos/Curso-Educando-desde-el-vinculo/Educando desde el Vínculo.webp',
       '/images/productos/Curso-Educando-desde-el-vinculo/curso-completo-2.webp',
@@ -106,7 +106,7 @@ export const products = [
     title: 'Protocolo Express: Guía de Crianza Respetuosa y Bienestar para Cachorros',
     badge: '🔥 +200 familias transformando su crianza',
     subtitle: 'Sentá las bases de una crianza respetuosa y una salud emocional sólida desde el primer día en casa.',
-    image: '/public/images/productos/Protocolo-cachorros/Protocolo cachorros.webp',
+    image: '/images/productos/Protocolo-cachorros/Protocolo cachorros.webp',
     gallery: [
       '/images/productos/Protocolo-cachorros/Protocolo cachorros.webp',
       '/images/productos/Protocolo-cachorros/Protocolo Cachorros 2.webp',

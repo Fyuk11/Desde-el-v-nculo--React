@@ -77,7 +77,7 @@ export default function LunoStage({ onSelectJuego }) {
   return (
     <section className="w-full relative my-8 border-y border-[#1F2421] overflow-hidden bg-[#0A0B0A] min-h-[640px] flex items-center transition-colors duration-700">
       
-      {/* 1. FOTOGRAFÍA HD ALINEADA DESDE ARRIBA (object-top) Y CON MÁS ESPACIO */}
+      {/* 1. FOTOGRAFÍA DE FONDO CON OVERLAY */}
       <div className="absolute inset-0 z-0 transition-opacity duration-1000 ease-out">
         <img 
           src={currentBgImage} 
@@ -85,12 +85,12 @@ export default function LunoStage({ onSelectJuego }) {
           className="w-full h-full object-cover object-top md:object-right-top opacity-90 transition-all duration-1000"
         />
         
-        {/* Degradado lateral izquierdo exclusivo para la lectura del texto */}
+        {/* Degradados defensivos para facilitar la lectura del texto */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#0A0B0A] via-[#0A0B0A]/80 via-40% to-transparent pointer-events-none" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0A0B0A] via-transparent to-[#0A0B0A]/20 pointer-events-none" />
       </div>
 
-      {/* 2. LUZ AMBIENTAL DE FONDO */}
+      {/* 2. LUZ AMBIENTAL DINÁMICA */}
       <div 
         className="absolute top-1/2 -left-32 -translate-y-1/2 w-[700px] h-[700px] pointer-events-none z-0 blur-[130px] transition-all duration-1000 opacity-50"
         style={{
@@ -101,7 +101,7 @@ export default function LunoStage({ onSelectJuego }) {
       {/* 3. CONTENIDO PRINCIPAL */}
       <div className="relative z-10 w-full max-w-6xl mx-auto px-6 py-12">
         
-        {/* Encabezado */}
+        {/* ENCABEZADO SUPERIOR */}
         <div className="flex items-center justify-between border-b border-white/10 pb-4 mb-8">
           <div className="flex items-center gap-2.5">
             <span 
@@ -130,7 +130,7 @@ export default function LunoStage({ onSelectJuego }) {
             {(pasoIndice > 0 || esFinal) && (
               <button
                 onClick={reiniciar}
-                className="text-xs font-mono text-stone-400 hover:text-white bg-black/40 border border-stone-800 hover:border-stone-500 px-3 py-1 transition-all flex items-center gap-1.5 backdrop-blur-sm"
+                className="text-xs font-mono text-stone-400 hover:text-white bg-black/40 border border-stone-800 hover:border-stone-500 px-3 py-1 transition-all flex items-center gap-1.5 backdrop-blur-sm cursor-pointer"
               >
                 <span>↺</span>
                 <span>Reiniciar</span>
@@ -139,11 +139,11 @@ export default function LunoStage({ onSelectJuego }) {
           </div>
         </div>
 
-        {/* CUBIERTA TRANSICIONABLE */}
+        {/* CONTENEDOR ANIMADO */}
         <div className={`transition-all duration-300 ${animando ? 'opacity-0 translate-y-2' : 'opacity-100 translate-y-0'}`}>
           
           {!esFinal ? (
-            /* PREGUNTAS (PASOS 1, 2 Y 3) */
+            /* PREGUNTAS INTERACTIVAS (PASOS 1, 2 Y 3) */
             <div className="max-w-xl space-y-6">
               
               <div className="space-y-1.5">
@@ -158,13 +158,13 @@ export default function LunoStage({ onSelectJuego }) {
                 </h3>
               </div>
 
-              {/* Opciones con Glassmorphism */}
+              {/* OPCIONES DE RESPUESTA */}
               <div className="space-y-2.5 pt-1">
                 {pasoActual.opciones.map((opcion, index) => (
                   <button
                     key={opcion.id}
                     onClick={seleccionarOpcion}
-                    className="w-full text-left p-4 bg-[#0A0B0A]/80 hover:bg-[#121614] border border-white/10 hover:border-white/35 transition-all duration-250 flex items-start gap-4 group backdrop-blur-md rounded-none"
+                    className="w-full text-left p-4 bg-[#0A0B0A]/80 hover:bg-[#121614] border border-white/10 hover:border-white/35 transition-all duration-250 flex items-start gap-4 group backdrop-blur-md rounded-none cursor-pointer"
                     onMouseEnter={(e) => {
                       e.currentTarget.style.boxShadow = `0 0 18px rgba(${pasoActual.accentRgb}, 0.2)`;
                       e.currentTarget.style.borderColor = pasoActual.accent;
@@ -189,7 +189,7 @@ export default function LunoStage({ onSelectJuego }) {
 
             </div>
           ) : (
-            /* DIAGNÓSTICO FINAL */
+            /* RESULTADO FINAL: PLAN SUGERIDO DE LA BIBLIOTECA */
             <div className="max-w-5xl space-y-10 py-2">
               
               <div className="space-y-2.5 max-w-2xl">
@@ -204,46 +204,46 @@ export default function LunoStage({ onSelectJuego }) {
                 </p>
               </div>
 
-              {/* Grid de las 2 Recomendaciones Flotantes */}
+              {/* GRID DE RECOMENDACIONES REALES DE LA BIBLIOTECA */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 
-                {/* Recomendación Práctica */}
+                {/* 01. RECOMENDACIÓN PRÁCTICA (CARTA AL ARCADE) */}
                 <div className="bg-[#0A0B0A]/85 border border-[#78B092]/40 p-6 backdrop-blur-md flex flex-col justify-between space-y-5 hover:border-[#78B092] transition-colors">
                   <div className="space-y-2">
                     <span className="text-xs font-mono text-[#78B092] tracking-wider uppercase font-semibold">
-                      01. Recomendación Práctica
+                      01. Práctica Interactiva
                     </span>
                     <h3 className="text-lg font-serif text-stone-100">
                       ¿Qué me está diciendo?
                     </h3>
                     <p className="text-xs text-stone-400 font-light leading-relaxed">
-                      Ejercicio interactivo en simulador para aprender a identificar el segundo exacto donde inicia la tensión corporal.
+                      Ejercicio interactivo en simulador para aprender a identificar el segundo exacto donde inicia la tensión corporal y las micro-señales.
                     </p>
                   </div>
                   <button
-                    onClick={() => onSelectJuego('juego-1', 'arcade')}
-                    className="w-full py-3 bg-[#78B092] hover:bg-[#649A7E] text-[#0A0B0A] text-xs font-mono font-bold uppercase tracking-wider transition-colors"
+                    onClick={() => onSelectJuego ? onSelectJuego('juego-1', 'arcade') : null}
+                    className="w-full py-3 bg-[#78B092] hover:bg-[#649A7E] text-[#0A0B0A] text-xs font-mono font-bold uppercase tracking-wider transition-colors cursor-pointer"
                   >
-                    Ir al ejercicio interactivo →
+                    Ir al Arcade Interactivo →
                   </button>
                 </div>
 
-                {/* Recomendación Teórica */}
+                {/* 02. RECOMENDACIÓN TEÓRICA (GUÍA PDF REAL: DIAGNÓSTICO INICIAL) */}
                 <div className="bg-[#0A0B0A]/85 border border-amber-500/40 p-6 backdrop-blur-md flex flex-col justify-between space-y-5 hover:border-amber-500/80 transition-colors">
                   <div className="space-y-2">
                     <span className="text-xs font-mono text-amber-400 tracking-wider uppercase font-semibold">
                       02. Material Teórico
                     </span>
                     <h3 className="text-lg font-serif text-stone-100">
-                      Guía de Señales & Comunicación
+                      ¿Dónde está parado tu vínculo hoy?
                     </h3>
                     <p className="text-xs text-stone-400 font-light leading-relaxed">
-                      Manual de campo detallado en PDF para comprender en profundidad el lenguaje corporal no verbal.
+                      Evaluación fundamental para mapear el estado actual de la relación, la carga de estrés y los puntos de fricción diarios.
                     </p>
                   </div>
                   <button
-                    onClick={() => onSelectJuego('pdf-1', 'guias')}
-                    className="w-full py-3 bg-amber-500/10 hover:bg-amber-500/20 text-amber-200 border border-amber-500/40 text-xs font-mono font-bold uppercase tracking-wider transition-colors"
+                    onClick={() => onSelectJuego ? onSelectJuego('pdf-1', 'guias') : null}
+                    className="w-full py-3 bg-amber-500/10 hover:bg-amber-500/20 text-amber-200 border border-amber-500/40 text-xs font-mono font-bold uppercase tracking-wider transition-colors cursor-pointer"
                   >
                     Consultar Guía PDF →
                   </button>
@@ -251,14 +251,14 @@ export default function LunoStage({ onSelectJuego }) {
 
               </div>
 
-              {/* Pie con botón de reinicio */}
+              {/* PIE DE PÁGINA Y REINICIO */}
               <div className="pt-4 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
                 <span className="text-xs font-mono text-stone-400">
                   ¿Quieres evaluar otro escenario o cambiar tus respuestas?
                 </span>
                 <button
                   onClick={reiniciar}
-                  className="px-5 py-2 bg-[#1A1E1C] hover:bg-[#242A27] text-stone-200 border border-stone-700 hover:border-stone-400 text-xs font-mono uppercase tracking-wider transition-all flex items-center gap-2"
+                  className="px-5 py-2 bg-[#1A1E1C] hover:bg-[#242A27] text-stone-200 border border-stone-700 hover:border-stone-400 text-xs font-mono uppercase tracking-wider transition-all flex items-center gap-2 cursor-pointer"
                 >
                   <span>↺</span>
                   <span>Realizar nueva consulta</span>

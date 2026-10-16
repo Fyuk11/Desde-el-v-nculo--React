@@ -592,59 +592,63 @@ export default function ProductDetail() {
         </div>
       </section>
 
-      {/* ========================================== */}
-      {/* 6. ¿POR QUÉ ELEGIR ESTE CAMINO?            */}
-      {/* ========================================== */}
-      <section className="py-20 bg-[#121413] border-y border-[#2A2D2B]">
-        <div className="max-w-6xl mx-auto px-6 md:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-            
-            <div className="lg:col-span-5">
-              <div className="rounded-2xl overflow-hidden border border-[#2A2D2B] shadow-2xl relative">
-                <img 
-                  src="/images/productos/por que elegir.webp" 
-                  alt="Tutora abrazando a su perro"
-                  className="w-full h-[380px] object-cover"
-                  onError={(e) => {
-                    e.target.onerror = null;
-                    e.target.src = "https://placehold.co/600x800/181A19/82A993?text=V%C3%ADnculo+Canino";
-                  }}
-                />
-              </div>
-            </div>
-
-            <div className="lg:col-span-7 space-y-4">
-              <h2 className="text-2xl md:text-3xl font-serif text-[#F3F2EF] leading-tight">
-                ¿Por qué elegir este camino?
-              </h2>
-              <div className="space-y-3 text-xs md:text-sm text-[#B5B3AD] leading-relaxed">
-                <p>
-                  Porque no buscamos perros autómatas que obedezcan por miedo o sumisión; buscamos perros equilibrados y tutores conscientes.
-                </p>
-                <p className="italic text-[#E8E6E1]">
-                  "Educando desde el Vínculo" no es un manual de recetas mágicas, es un cambio de perspectiva definitivo.
-                </p>
-                <p>
-                  Este programa fusiona los últimos avances de la ciencia del comportamiento canino con la empatía emocional, brindándote un método sistémico donde tu propia calma y la comprensión del entorno son los pilares fundamentales.
-                </p>
-              </div>
-
-              <div className="pt-4">
-                <a
-                  href={currentBundleData.hotmartUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#82A993] hover:bg-[#93B8A3] text-[#0C0D0D] text-xs uppercase tracking-widest font-bold rounded-lg transition-all shadow-lg"
-                >
-                  <span>Comenzar el cambio hoy</span>
-                  <ArrowRight className="w-4 h-4" />
-                </a>
-              </div>
-            </div>
-
-          </div>
+     {/* ========================================== */}
+{/* 6. ¿POR QUÉ ELEGIR ESTE CAMINO?           */}
+{/* ========================================== */}
+<section className="py-20 bg-[#121413] border-y border-[#2A2D2B]">
+  <div className="max-w-6xl mx-auto px-6 md:px-12">
+    <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+      
+      <div className="lg:col-span-5">
+        <div className="rounded-2xl overflow-hidden border border-[#2A2D2B] shadow-2xl relative">
+          <img 
+            src="/images/productos/por que elegir.webp" 
+            alt="Tutora abrazando a su perro"
+            className="w-full h-[380px] object-cover"
+            onError={(e) => {
+              e.target.onerror = null;
+              e.target.src = "https://placehold.co/600x800/181A19/82A993?text=V%C3%ADnculo+Canino";
+            }}
+          />
         </div>
-      </section>
+      </div>
+
+      <div className="lg:col-span-7 space-y-4">
+        <h2 className="text-2xl md:text-3xl font-serif text-[#F3F2EF] leading-tight">
+          ¿Por qué elegir este camino?
+        </h2>
+        <div className="space-y-3 text-xs md:text-sm text-[#B5B3AD] leading-relaxed">
+          <p>
+            Porque no buscamos perros autómatas que obedezcan por miedo o sumisión; buscamos perros equilibrados y tutores conscientes.
+          </p>
+          <p className="italic text-[#E8E6E1]">
+            "Educando desde el Vínculo" no es un manual de recetas mágicas, es un cambio de perspectiva definitivo.
+          </p>
+          <p>
+            Este programa fusiona los últimos avances de la ciencia del comportamiento canino con la empatía emocional, brindándote un método sistémico donde tu propia calma y la comprensión del entorno son los pilares fundamentales.
+          </p>
+        </div>
+
+        <div className="pt-4">
+        <a
+  href={
+    product?.id === 'pack-completo'
+      ? (product?.bundles?.pack?.hotmartUrl || product?.bundles?.single?.hotmartUrl)
+      : (product?.bundles?.single?.hotmartUrl || product?.hotmartUrl || '#')
+  }
+  target="_blank"
+  rel="noreferrer"
+  className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#82A993] hover:bg-[#93B8A3] text-[#0C0D0D] text-xs uppercase tracking-widest font-bold rounded-lg transition-all shadow-lg cursor-pointer"
+>
+  <span>Comenzar el cambio hoy</span>
+  <ArrowRight className="w-4 h-4" />
+</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
       {/* ========================================== */}
       {/* 7. FAQS GENERALES                          */}
