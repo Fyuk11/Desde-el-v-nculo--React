@@ -553,44 +553,38 @@ export default function ProductDetail() {
       {/* ========================================== */}
       {/* 5. TESTIMONIOS Y PRUEBA SOCIAL             */}
       {/* ========================================== */}
-      <section className="py-20 max-w-7xl mx-auto px-6 md:px-12">
-        <div className="text-center max-w-2xl mx-auto mb-12">
-          <h2 className="text-2xl font-serif text-[#F3F2EF] mb-3">
-            Lo que dicen quienes ya hicieron el cambio
-          </h2>
-          <p className="text-xs text-[#B5B3AD]">
-            Historias reales de tutores que transformaron la relación con sus compañeros caninos.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-          <div className="bg-[#121413] border border-[#2A2D2B] p-6 rounded-2xl relative shadow-xl">
-            <p className="text-xs md:text-sm text-[#E8E6E1] italic leading-relaxed mb-4">
-              "Estaba muy frustrada con los métodos de adiestramiento tradicionales que solo me pedían exigirle órdenes vacías a Bruno. Este curso me dio la sensibilidad y el sustento científico para comprenderlo."
+      {product?.testimonials && product.testimonials.length > 0 && (
+        <section className="py-20 max-w-7xl mx-auto px-6 md:px-12">
+          <div className="text-center max-w-2xl mx-auto mb-12">
+            <h2 className="text-2xl font-serif text-[#F3F2EF] mb-3">
+              Lo que dicen quienes ya hicieron el cambio
+            </h2>
+            <p className="text-xs text-[#B5B3AD]">
+              Historias reales de tutores que transformaron la relación con sus compañeros caninos.
             </p>
-            <div className="flex items-center gap-3 pt-3 border-t border-[#2A2D2B]">
-              <HeartHandshake className="w-5 h-5 text-[#82A993]" />
-              <div>
-                <h5 className="text-xs font-semibold text-[#F3F2EF]">Natalia S. y Bruno</h5>
-                <span className="text-[10px] text-[#82A993]">Tutoría Canina Guiada</span>
-              </div>
-            </div>
           </div>
 
-          <div className="bg-[#121413] border border-[#2A2D2B] p-6 rounded-2xl relative shadow-xl">
-            <p className="text-xs md:text-sm text-[#E8E6E1] italic leading-relaxed mb-4">
-              "Entender los niveles de ansiedad y no tapar los síntomas con premios o castigos cambió la dinámica del hogar por completo. Hoy caminamos flojos de correa y disfrutamos los paseos."
-            </p>
-            <div className="flex items-center gap-3 pt-3 border-t border-[#2A2D2B]">
-              <HeartHandshake className="w-5 h-5 text-[#82A993]" />
-              <div>
-                <h5 className="text-xs font-semibold text-[#F3F2EF]">Matías G. y Luna</h5>
-                <span className="text-[10px] text-[#82A993]">Programa de Convivencia</span>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {product.testimonials.map((item, i) => (
+              <div 
+                key={i} 
+                className="bg-[#121413] border border-[#2A2D2B] p-6 rounded-2xl relative shadow-xl flex flex-col justify-between"
+              >
+                <p className="text-xs md:text-sm text-[#E8E6E1] italic leading-relaxed mb-6">
+                  "{item.text}"
+                </p>
+                <div className="flex items-center gap-3 pt-4 border-t border-[#2A2D2B]">
+                  <HeartHandshake className="w-5 h-5 text-[#82A993] shrink-0" />
+                  <div>
+                    <h5 className="text-xs font-semibold text-[#F3F2EF]">{item.name}</h5>
+                    <span className="text-[10px] text-[#82A993]">Tutoría Canina Consciente</span>
+                  </div>
+                </div>
               </div>
-            </div>
+            ))}
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
      {/* ========================================== */}
 {/* 6. ¿POR QUÉ ELEGIR ESTE CAMINO?           */}
