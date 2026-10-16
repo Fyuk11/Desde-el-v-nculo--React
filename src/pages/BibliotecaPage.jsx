@@ -241,10 +241,12 @@ export default function BibliotecaPage() {
     }
   }, []);
 
-  // PASO 1: Verificar que el email exista en la base de datos permitida
+  // PASO 1: Verificar que el email exista en la base de datos permitida y disparar el webhook de Make
   const handleVerifyEmail = async (e) => {
     e.preventDefault();
-    if (!emailInput || !emailInput.includes('@')) {
+    const cleanEmail = emailInput.trim().toLowerCase();
+
+    if (!cleanEmail || !cleanEmail.includes('@')) {
       setErrorMsg('Por favor, ingresá un correo electrónico válido.');
       return;
     }
@@ -253,32 +255,47 @@ export default function BibliotecaPage() {
     setErrorMsg('');
 
     try {
+      // 1. Validar en Supabase si el email tiene acceso activo
       const { data, error } = await supabase
         .from('allowed_users')
         .select('*')
-        .eq('email', emailInput.trim().toLowerCase())
+        .eq('email', cleanEmail)
         .eq('has_access', true)
-        .single();
+        .maybeSingle();
 
       if (error || !data) {
         setErrorMsg('Este correo no registra una membresía activa. Adquiere tu acceso más abajo.');
-      } else {
-        // Aquí en el futuro Make enviará el código de 6 dígitos. Por ahora pasamos al paso de token.
-        setStep(2);
+        setLoading(false);
+        return;
       }
+
+      // 2. Disparar Webhook al Escenario 2 de Make para generar/guardar OTP y enviar email
+      const MAKE_OTP_WEBHOOK = 'https://hook.us2.make.com/rvg7t15nrcuatdasy8q37ahlk9z3pb8r';
+
+      await fetch(MAKE_OTP_WEBHOOK, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: cleanEmail }),
+      });
+
+      // 3. Avanzar al paso del código OTP
+      setStep(2);
     } catch (err) {
-      console.error(err);
-      setErrorMsg('Ocurrió un error al verificar tu acceso. Inténtalo de nuevo.');
+      console.error('Error al solicitar verificación:', err);
+      setErrorMsg('Ocurrió un error al enviar el código. Inténtalo de nuevo.');
     } finally {
       setLoading(false);
     }
   };
 
-  // PASO 2: Validar el código de seguridad de 6 dígitos enviado por Make/Email
+  // PASO 2: Validar el código OTP REAL de 6 dígitos únicamente contra la tabla verification_tokens
   const handleVerifyToken = async (e) => {
     e.preventDefault();
-    if (!tokenInput || tokenInput.trim().length < 4) {
-      setErrorMsg('Ingresá el código válido de verificación.');
+    const cleanEmail = emailInput.trim().toLowerCase();
+    const cleanToken = tokenInput.trim();
+
+    if (!cleanToken || cleanToken.length !== 6) {
+      setErrorMsg('Ingresá el código válido de 6 dígitos.');
       return;
     }
 
@@ -286,20 +303,34 @@ export default function BibliotecaPage() {
     setErrorMsg('');
 
     try {
-      // Nota: Cuando conectemos Make, aquí validaremos el código temporal. 
-      // Por ahora, aceptamos cualquier código de 6 dígitos para pruebas locales o el código maestro "123456".
-      if (tokenInput.trim() === '123456' || tokenInput.trim().length === 6) {
-        localStorage.setItem('vinculo_auth_email', emailInput.trim().toLowerCase());
+      // Validar contra Supabase que el token exista, coincida con el mail y no haya expirado (15 min)
+      const { data, error } = await supabase
+        .from('verification_tokens')
+        .select('*')
+        .eq('email', cleanEmail)
+        .eq('token', cleanToken)
+        .gte('expires_at', new Date().toISOString())
+        .order('created_at', { ascending: false })
+        .limit(1);
+
+      if (error) {
+        console.error('Error al validar token:', error);
+        setErrorMsg('Error de conexión. Inténtalo de nuevo.');
+        return;
+      }
+
+      if (data && data.length > 0) {
+        localStorage.setItem('vinculo_auth_email', cleanEmail);
         setIsAuthorized(true);
         setShowLoginModal(false);
         setStep(1);
         setTokenInput('');
       } else {
-        setErrorMsg('Código incorrecto o expirado. Revisá tu correo.');
+        setErrorMsg('Código incorrecto o expirado. Revisá tu correo o solicitá uno nuevo.');
       }
     } catch (err) {
-      console.error(err);
-      setErrorMsg('Error al validar el código.');
+      console.error('Error inesperado:', err);
+      setErrorMsg('Ocurrió un error al validar el código.');
     } finally {
       setLoading(false);
     }
