@@ -893,7 +893,7 @@ export default function BibliotecaPage() {
             playsInline
             className="w-full h-full object-cover opacity-80 filter contrast-125 grayscale"
           >
-            <source src="/public/images/biblioteca/background-biblioteca.mp4" type="video/mp4" />
+            <source src="/images/biblioteca/background-biblioteca.mp4" type="video/mp4" />
           </video>
           <div className="absolute inset-0 bg-gradient-to-t from-[#0D0E0D] via-[#0D0E0D]/70 to-transparent" />
         </div>
