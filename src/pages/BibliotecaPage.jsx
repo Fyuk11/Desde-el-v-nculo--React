@@ -161,17 +161,17 @@ const SEMANA_ROADMAP = [
   { 
     dia: '03', 
     titulo: '5 Claves para comprender el lenguaje de tu perro', 
-    desc: 'Estudiás los pilares etológicos de la comunicación no verbal para entender su universo emocional sin malentendidos.' 
+    desc: 'Las señales que tu perro te da todo el tiempo y que a veces pasan desapercibidas.' 
   },
   { 
     dia: '04', 
     titulo: 'El Código de la Calma & Zona de Refugio', 
-    desc: 'Implementás el protocolo de descompresión en casa y hacés la Práctica 03 para acondicionar su lugar seguro de descanso.' 
+    desc: 'Implementás la guía para entender el ladrido y transformar la reactividad. Un protocolo empático y científico, y hacés la Práctica 03 para acondicionar su lugar seguro de descanso.' 
   },
   { 
     dia: '05', 
     titulo: 'Paseo en Sintonía & Gestión de Umbrales', 
-    desc: 'Revisás el manual de paseo, la pauta de correa floja y entrenás las Prácticas 02 y 04 con Luno para manejar distancias en la calle.' 
+    desc: '3 Claves para que deje de tirar de la correa (Sin tirones ni castigos) y entrenás las Prácticas 02 y 04 con Luno para manejar distancias en la calle.' 
   },
   { 
     dia: '06', 
