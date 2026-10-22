@@ -308,7 +308,7 @@ export default function BibliotecaPage() {
         .from('verification_tokens')
         .select('*')
         .eq('email', cleanEmail)
-        .eq('code', cleanToken)
+        .eq('token', cleanToken)
         .gte('expires_at', new Date().toISOString())
         .order('created_at', { ascending: false })
         .limit(1);
