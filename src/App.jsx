@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import ScrollToTop from './components/layout/ScrollToTop';
+import AnalyticsTracker from './components/layout/AnalyticsTracker'; // <-- 1. Importás acá
 
 // Carga directa de las páginas principales
 import Home from './pages/Home';
@@ -27,6 +28,7 @@ export default function App() {
   return (
     <Router>
       <ScrollToTop />
+      <AnalyticsTracker /> {/* <-- 2. Lo agregás acá */}
       <div className="min-h-screen bg-[#121413] text-[#E8E6E1] selection:bg-[#4A6758] selection:text-white flex flex-col justify-between">
         <Navbar />
         <main className="flex-grow">
